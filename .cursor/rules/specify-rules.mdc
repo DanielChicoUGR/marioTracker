@@ -1,0 +1,35 @@
+---
+description: Project Development Guidelines
+globs: ["**/*"]
+alwaysApply: true
+---
+
+# marioTracker Development Guidelines
+
+Auto-generated from all feature plans. Last updated: 2026-04-01
+
+## Active Technologies
+
+- TypeScript 5.x, React 19.x (o 18.x LTS según plantilla Vite), Node-compatible types. + Vite 6.x+, React, `@supabase/supabase-js`, Tailwind CSS v4, shadcn/ui (Radix UI + class-variance-authority), React Router (o enrutado equivalente). (001-social-realtime-tournament)
+
+## Project Structure
+
+```text
+src/
+tests/
+```
+
+## Commands
+
+npm test && npm run lint
+
+## Code Style
+
+TypeScript 5.x, React 19.x (o 18.x LTS según plantilla Vite), Node-compatible types.: Follow standard conventions
+
+## Recent Changes
+
+- 001-social-realtime-tournament: Added TypeScript 5.x, React 19.x (o 18.x LTS según plantilla Vite), Node-compatible types. + Vite 6.x+, React, `@supabase/supabase-js`, Tailwind CSS v4, shadcn/ui (Radix UI + class-variance-authority), React Router (o enrutado equivalente).
+
+<!-- MANUAL ADDITIONS START -->
+<!-- MANUAL ADDITIONS END -->
