@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-display: "Fredoka One", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Nunito", ui-sans-serif, system-ui, sans-serif;
+
+  --color-mario-red: #e52521;
+  --color-luigi-green: #43b047;
+  --color-peach-pink: #ff99cc;
+  --color-star-yellow: #fbd000;
+  --color-sky-blue: #00bfff;
+  --color-waluigi-purple: #8a2be2;
+  --color-dark-border: #2a2a2a;
+  --color-court-green: #689f38;
+  --color-court-light: #8bc34a;
+  --color-bg: #f0f4f8;
+  --color-card: #ffffff;
+}
+
+@layer base {
+  :root {
+    --background: var(--color-bg);
+    --foreground: var(--color-dark-border);
+    --card: var(--color-card);
+    --primary: var(--color-mario-red);
+    --ring: var(--color-mario-red);
+    --border: var(--color-dark-border);
+  }
+
+  body {
+    @apply bg-[var(--color-court-green)] text-[var(--color-dark-border)] antialiased;
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.15) 2px, transparent 2px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.15) 2px, transparent 2px);
+    background-size: 40px 40px;
+    font-family: var(--font-sans);
+    min-height: 100vh;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+  }
+}

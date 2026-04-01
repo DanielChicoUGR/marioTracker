@@ -1,0 +1,29 @@
+# Dependencies
+node_modules/
+
+# Build
+dist/
+build/
+
+# Env (never commit secrets)
+.env
+.env.local
+.env.*.local
+
+# Logs & cache
+*.log
+.cache/
+coverage/
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Supabase local
+supabase/.branches/
+supabase/.temp/
+
+# Vitest
+coverage/
