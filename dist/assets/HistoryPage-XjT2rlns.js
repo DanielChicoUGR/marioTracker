@@ -1,0 +1,9 @@
+import{s as l,r as d,j as e}from"./index-DBCaB1cn.js";import{C as c,a as u,b as m,c as x,d as p}from"./card-Btt-L_pt.js";async function h(){const{data:s,error:r}=await l.auth.getUser();if(r||!s.user)throw r??new Error("Sin usuario");const{data:n,error:o}=await l.from("tournament_participants").select(`
+      role,
+      tournaments (
+        id,
+        name,
+        status,
+        updated_at
+      )
+    `).eq("user_id",s.user.id);if(o)throw o;return(n??[]).filter(a=>a.tournaments).map(a=>({tournament_id:a.tournaments.id,name:a.tournaments.name,status:a.tournaments.status,updated_at:a.tournaments.updated_at,role:a.role})).sort((a,t)=>new Date(t.updated_at).getTime()-new Date(a.updated_at).getTime())}function w(){const[s,r]=d.useState([]),[n,o]=d.useState(null),[i,a]=d.useState(!0);return d.useEffect(()=>{(async()=>{try{const t=await h();r(t)}catch(t){o(t instanceof Error?t.message:"Error")}finally{a(!1)}})()},[]),i?e.jsx("div",{className:"p-6 text-center font-bold text-white",children:"Cargando…"}):e.jsx("div",{className:"mx-auto max-w-3xl space-y-6 p-6",children:e.jsxs(c,{children:[e.jsxs(u,{children:[e.jsx(m,{children:"Historial"}),e.jsx(x,{children:"Torneos en los que has participado."})]}),e.jsxs(p,{className:"space-y-3",children:[n?e.jsx("p",{className:"font-bold text-red-700",children:n}):null,s.length===0?e.jsx("p",{className:"text-sm text-neutral-600",children:"Aún no hay torneos en tu historial. Crea uno o únete con el enlace."}):e.jsx("ul",{className:"space-y-2",children:s.map(t=>e.jsxs("li",{className:"rounded-md border border-neutral-200 bg-white p-3 text-sm",children:[e.jsx("div",{className:"font-bold",children:t.name}),e.jsxs("div",{className:"text-neutral-600",children:["Estado: ",t.status," · Rol: ",t.role]}),e.jsxs("div",{className:"text-xs text-neutral-500",children:["Actualizado: ",new Date(t.updated_at).toLocaleString()]})]},t.tournament_id))})]})]})})}export{w as default};
